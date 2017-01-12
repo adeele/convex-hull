@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adele/studies/aal/Point.cpp
+Point.h
+/home/adele/studies/aal/Point.h
+
+/home/adele/studies/aal/Point.h
+iostream
+-
+
+/home/adele/studies/aal/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+Point.h
+/home/adele/studies/aal/Point.h
+

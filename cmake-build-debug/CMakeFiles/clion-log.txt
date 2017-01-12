@@ -1,0 +1,4 @@
+/home/adele/tools/clion/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/adele/studies/aal
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/adele/studies/aal/cmake-build-debug
