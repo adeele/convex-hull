@@ -43,10 +43,10 @@ RM = /home/adele/tools/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adele/studies/aal
+CMAKE_SOURCE_DIR = /home/adele/studies/convex-hull
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adele/studies/aal/cmake-build-debug
+CMAKE_BINARY_DIR = /home/adele/studies/convex-hull/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/aal.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/aal.dir/flags.make
 
 CMakeFiles/aal.dir/main.cpp.o: CMakeFiles/aal.dir/flags.make
 CMakeFiles/aal.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/aal/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/aal.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/main.cpp.o -c /home/adele/studies/aal/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/aal.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/main.cpp.o -c /home/adele/studies/convex-hull/main.cpp
 
 CMakeFiles/aal.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aal.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/aal/main.cpp > CMakeFiles/aal.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/convex-hull/main.cpp > CMakeFiles/aal.dir/main.cpp.i
 
 CMakeFiles/aal.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aal.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/aal/main.cpp -o CMakeFiles/aal.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/convex-hull/main.cpp -o CMakeFiles/aal.dir/main.cpp.s
 
 CMakeFiles/aal.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/aal.dir/main.cpp.o.provides.build: CMakeFiles/aal.dir/main.cpp.o
 
 CMakeFiles/aal.dir/Point.cpp.o: CMakeFiles/aal.dir/flags.make
 CMakeFiles/aal.dir/Point.cpp.o: ../Point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/aal/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/aal.dir/Point.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/Point.cpp.o -c /home/adele/studies/aal/Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/aal.dir/Point.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/Point.cpp.o -c /home/adele/studies/convex-hull/Point.cpp
 
 CMakeFiles/aal.dir/Point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aal.dir/Point.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/aal/Point.cpp > CMakeFiles/aal.dir/Point.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/convex-hull/Point.cpp > CMakeFiles/aal.dir/Point.cpp.i
 
 CMakeFiles/aal.dir/Point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aal.dir/Point.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/aal/Point.cpp -o CMakeFiles/aal.dir/Point.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/convex-hull/Point.cpp -o CMakeFiles/aal.dir/Point.cpp.s
 
 CMakeFiles/aal.dir/Point.cpp.o.requires:
 
@@ -105,19 +105,71 @@ CMakeFiles/aal.dir/Point.cpp.o.provides: CMakeFiles/aal.dir/Point.cpp.o.requires
 CMakeFiles/aal.dir/Point.cpp.o.provides.build: CMakeFiles/aal.dir/Point.cpp.o
 
 
+CMakeFiles/aal.dir/Generator.cpp.o: CMakeFiles/aal.dir/flags.make
+CMakeFiles/aal.dir/Generator.cpp.o: ../Generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/aal.dir/Generator.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/Generator.cpp.o -c /home/adele/studies/convex-hull/Generator.cpp
+
+CMakeFiles/aal.dir/Generator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aal.dir/Generator.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/convex-hull/Generator.cpp > CMakeFiles/aal.dir/Generator.cpp.i
+
+CMakeFiles/aal.dir/Generator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aal.dir/Generator.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/convex-hull/Generator.cpp -o CMakeFiles/aal.dir/Generator.cpp.s
+
+CMakeFiles/aal.dir/Generator.cpp.o.requires:
+
+.PHONY : CMakeFiles/aal.dir/Generator.cpp.o.requires
+
+CMakeFiles/aal.dir/Generator.cpp.o.provides: CMakeFiles/aal.dir/Generator.cpp.o.requires
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Generator.cpp.o.provides.build
+.PHONY : CMakeFiles/aal.dir/Generator.cpp.o.provides
+
+CMakeFiles/aal.dir/Generator.cpp.o.provides.build: CMakeFiles/aal.dir/Generator.cpp.o
+
+
+CMakeFiles/aal.dir/ConvexHull.cpp.o: CMakeFiles/aal.dir/flags.make
+CMakeFiles/aal.dir/ConvexHull.cpp.o: ../ConvexHull.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/aal.dir/ConvexHull.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/ConvexHull.cpp.o -c /home/adele/studies/convex-hull/ConvexHull.cpp
+
+CMakeFiles/aal.dir/ConvexHull.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aal.dir/ConvexHull.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/convex-hull/ConvexHull.cpp > CMakeFiles/aal.dir/ConvexHull.cpp.i
+
+CMakeFiles/aal.dir/ConvexHull.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aal.dir/ConvexHull.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/convex-hull/ConvexHull.cpp -o CMakeFiles/aal.dir/ConvexHull.cpp.s
+
+CMakeFiles/aal.dir/ConvexHull.cpp.o.requires:
+
+.PHONY : CMakeFiles/aal.dir/ConvexHull.cpp.o.requires
+
+CMakeFiles/aal.dir/ConvexHull.cpp.o.provides: CMakeFiles/aal.dir/ConvexHull.cpp.o.requires
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/ConvexHull.cpp.o.provides.build
+.PHONY : CMakeFiles/aal.dir/ConvexHull.cpp.o.provides
+
+CMakeFiles/aal.dir/ConvexHull.cpp.o.provides.build: CMakeFiles/aal.dir/ConvexHull.cpp.o
+
+
 # Object files for target aal
 aal_OBJECTS = \
 "CMakeFiles/aal.dir/main.cpp.o" \
-"CMakeFiles/aal.dir/Point.cpp.o"
+"CMakeFiles/aal.dir/Point.cpp.o" \
+"CMakeFiles/aal.dir/Generator.cpp.o" \
+"CMakeFiles/aal.dir/ConvexHull.cpp.o"
 
 # External object files for target aal
 aal_EXTERNAL_OBJECTS =
 
 aal: CMakeFiles/aal.dir/main.cpp.o
 aal: CMakeFiles/aal.dir/Point.cpp.o
+aal: CMakeFiles/aal.dir/Generator.cpp.o
+aal: CMakeFiles/aal.dir/ConvexHull.cpp.o
 aal: CMakeFiles/aal.dir/build.make
 aal: CMakeFiles/aal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adele/studies/aal/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable aal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable aal"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aal.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +179,8 @@ CMakeFiles/aal.dir/build: aal
 
 CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/main.cpp.o.requires
 CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/Point.cpp.o.requires
+CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/Generator.cpp.o.requires
+CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/ConvexHull.cpp.o.requires
 
 .PHONY : CMakeFiles/aal.dir/requires
 
@@ -135,6 +189,6 @@ CMakeFiles/aal.dir/clean:
 .PHONY : CMakeFiles/aal.dir/clean
 
 CMakeFiles/aal.dir/depend:
-	cd /home/adele/studies/aal/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adele/studies/aal /home/adele/studies/aal /home/adele/studies/aal/cmake-build-debug /home/adele/studies/aal/cmake-build-debug /home/adele/studies/aal/cmake-build-debug/CMakeFiles/aal.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adele/studies/convex-hull/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adele/studies/convex-hull /home/adele/studies/convex-hull /home/adele/studies/convex-hull/cmake-build-debug /home/adele/studies/convex-hull/cmake-build-debug /home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/aal.dir/depend
 

@@ -17,6 +17,8 @@ class Point {
 public:
     Point(double a, double b, double c);
     void print();
+    bool isInSphere(int radiusOuter, int radiusInner);
+    bool isInBall(int radius);
 };
 
 #endif //AAL_POINT_H

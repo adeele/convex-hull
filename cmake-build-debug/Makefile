@@ -48,10 +48,10 @@ RM = /home/adele/tools/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adele/studies/aal
+CMAKE_SOURCE_DIR = /home/adele/studies/convex-hull
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adele/studies/aal/cmake-build-debug
+CMAKE_BINARY_DIR = /home/adele/studies/convex-hull/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/adele/studies/aal/cmake-build-debug/CMakeFiles /home/adele/studies/aal/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles /home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/adele/studies/aal/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,60 @@ aal: cmake_check_build_system
 aal/fast:
 	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/build
 .PHONY : aal/fast
+
+ConvexHull.o: ConvexHull.cpp.o
+
+.PHONY : ConvexHull.o
+
+# target to build an object file
+ConvexHull.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/ConvexHull.cpp.o
+.PHONY : ConvexHull.cpp.o
+
+ConvexHull.i: ConvexHull.cpp.i
+
+.PHONY : ConvexHull.i
+
+# target to preprocess a source file
+ConvexHull.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/ConvexHull.cpp.i
+.PHONY : ConvexHull.cpp.i
+
+ConvexHull.s: ConvexHull.cpp.s
+
+.PHONY : ConvexHull.s
+
+# target to generate assembly for a file
+ConvexHull.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/ConvexHull.cpp.s
+.PHONY : ConvexHull.cpp.s
+
+Generator.o: Generator.cpp.o
+
+.PHONY : Generator.o
+
+# target to build an object file
+Generator.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Generator.cpp.o
+.PHONY : Generator.cpp.o
+
+Generator.i: Generator.cpp.i
+
+.PHONY : Generator.i
+
+# target to preprocess a source file
+Generator.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Generator.cpp.i
+.PHONY : Generator.cpp.i
+
+Generator.s: Generator.cpp.s
+
+.PHONY : Generator.s
+
+# target to generate assembly for a file
+Generator.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Generator.cpp.s
+.PHONY : Generator.cpp.s
 
 Point.o: Point.cpp.o
 
@@ -186,6 +240,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... aal"
+	@echo "... ConvexHull.o"
+	@echo "... ConvexHull.i"
+	@echo "... ConvexHull.s"
+	@echo "... Generator.o"
+	@echo "... Generator.i"
+	@echo "... Generator.s"
 	@echo "... Point.o"
 	@echo "... Point.i"
 	@echo "... Point.s"

@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/adele/studies/aal/Point.cpp" "/home/adele/studies/aal/cmake-build-debug/CMakeFiles/aal.dir/Point.cpp.o"
-  "/home/adele/studies/aal/main.cpp" "/home/adele/studies/aal/cmake-build-debug/CMakeFiles/aal.dir/main.cpp.o"
+  "/home/adele/studies/convex-hull/ConvexHull.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/ConvexHull.cpp.o"
+  "/home/adele/studies/convex-hull/Generator.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/Generator.cpp.o"
+  "/home/adele/studies/convex-hull/Point.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/Point.cpp.o"
+  "/home/adele/studies/convex-hull/main.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

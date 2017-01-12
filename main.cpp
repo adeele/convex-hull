@@ -1,38 +1,37 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include "Point.h"
+#include "Generator.h"
+#include "ConvexHull.h"
 
 using namespace std;
 
-int main() {
-    ifstream input;
-    ofstream output;
+int main(int argc, char *argv[]) {
+    int pointsAmount;
+    double accuracy;
 
-    input.open("../in.txt");
-    output.open("../out.txt");
+    sscanf(argv[1], "%d", &pointsAmount);
+    sscanf(argv[2], "%lf", &accuracy);
 
-    double num, a, b, c;
-    vector<Point*> list;
-    Point *p;
-
-    input >> num;
-
-    while (!input.eof()) {
-        input >> a;
-        input >> b;
-        input >> c;
-        p = new Point(a, b, c);
-        list.push_back(p);
+    if (argc > 3) {
+        int seed;
+        sscanf(argv[3], "%d", &seed);
+        srand(seed);
+    } else {
+        srand(time(NULL));
     }
 
-    for(int i = 0; i < list.size(); i++) {
-        list[i]->print();
-        delete(list[i]);
-    }
+    Generator g;
+    vector<Point> points = g.generateDataInCube(pointsAmount);
 
-    output.close();
-    input.close();
+    ConvexHull ch;
+    points = ch.incrementalDevelopment(points, accuracy);
+
+    points[0].print();
+
+    // TODO solve ball and sphere as well
+//  g.generateDataInBall(pointsAmount);
+//  g.generateDataInSphere(pointsAmount);
 
     return 0;
 }
