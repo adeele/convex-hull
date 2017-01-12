@@ -9,8 +9,8 @@
     </style>
   </head>
   <body>
-    <script src="three.min.js"></script>
-    <script src="cube.js"></script>
+    <script src="lib/three.min.js"></script>
+    <script src="ball.js"></script>
     <script>
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -22,7 +22,7 @@
       var dot = new THREE.PointCloud(dotGeometry, dotMaterial);
       var angle = 0;
 
-      cube.map(function (point) {
+      ball.map(function (point) {
         dotGeometry.vertices.push(new THREE.Vector3(point[0], point[1], point[2]));
         scene.add(dot);
       });
@@ -31,8 +31,8 @@
           requestAnimationFrame(render);
           renderer.render(scene, camera);
           camera.lookAt(new THREE.Vector3(0,0,0));
-          camera.position.x = 250 * Math.cos(angle);
-          camera.position.z = 250 * Math.sin(angle);
+          camera.position.x = 200 * Math.cos(angle);
+          camera.position.z = 200 * Math.sin(angle);
           angle += 0.01;
       }
 

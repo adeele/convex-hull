@@ -123,113 +123,113 @@ aal/fast:
 	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/build
 .PHONY : aal/fast
 
-ConvexHull.o: ConvexHull.cpp.o
+src/ConvexHull.o: src/ConvexHull.cpp.o
 
-.PHONY : ConvexHull.o
-
-# target to build an object file
-ConvexHull.cpp.o:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/ConvexHull.cpp.o
-.PHONY : ConvexHull.cpp.o
-
-ConvexHull.i: ConvexHull.cpp.i
-
-.PHONY : ConvexHull.i
-
-# target to preprocess a source file
-ConvexHull.cpp.i:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/ConvexHull.cpp.i
-.PHONY : ConvexHull.cpp.i
-
-ConvexHull.s: ConvexHull.cpp.s
-
-.PHONY : ConvexHull.s
-
-# target to generate assembly for a file
-ConvexHull.cpp.s:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/ConvexHull.cpp.s
-.PHONY : ConvexHull.cpp.s
-
-Generator.o: Generator.cpp.o
-
-.PHONY : Generator.o
+.PHONY : src/ConvexHull.o
 
 # target to build an object file
-Generator.cpp.o:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Generator.cpp.o
-.PHONY : Generator.cpp.o
+src/ConvexHull.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/ConvexHull.cpp.o
+.PHONY : src/ConvexHull.cpp.o
 
-Generator.i: Generator.cpp.i
+src/ConvexHull.i: src/ConvexHull.cpp.i
 
-.PHONY : Generator.i
+.PHONY : src/ConvexHull.i
 
 # target to preprocess a source file
-Generator.cpp.i:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Generator.cpp.i
-.PHONY : Generator.cpp.i
+src/ConvexHull.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/ConvexHull.cpp.i
+.PHONY : src/ConvexHull.cpp.i
 
-Generator.s: Generator.cpp.s
+src/ConvexHull.s: src/ConvexHull.cpp.s
 
-.PHONY : Generator.s
+.PHONY : src/ConvexHull.s
 
 # target to generate assembly for a file
-Generator.cpp.s:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Generator.cpp.s
-.PHONY : Generator.cpp.s
+src/ConvexHull.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/ConvexHull.cpp.s
+.PHONY : src/ConvexHull.cpp.s
 
-Point.o: Point.cpp.o
+src/Generator.o: src/Generator.cpp.o
 
-.PHONY : Point.o
+.PHONY : src/Generator.o
 
 # target to build an object file
-Point.cpp.o:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Point.cpp.o
-.PHONY : Point.cpp.o
+src/Generator.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Generator.cpp.o
+.PHONY : src/Generator.cpp.o
 
-Point.i: Point.cpp.i
+src/Generator.i: src/Generator.cpp.i
 
-.PHONY : Point.i
+.PHONY : src/Generator.i
 
 # target to preprocess a source file
-Point.cpp.i:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Point.cpp.i
-.PHONY : Point.cpp.i
+src/Generator.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Generator.cpp.i
+.PHONY : src/Generator.cpp.i
 
-Point.s: Point.cpp.s
+src/Generator.s: src/Generator.cpp.s
 
-.PHONY : Point.s
+.PHONY : src/Generator.s
 
 # target to generate assembly for a file
-Point.cpp.s:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/Point.cpp.s
-.PHONY : Point.cpp.s
+src/Generator.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Generator.cpp.s
+.PHONY : src/Generator.cpp.s
 
-main.o: main.cpp.o
+src/Point.o: src/Point.cpp.o
 
-.PHONY : main.o
+.PHONY : src/Point.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/Point.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Point.cpp.o
+.PHONY : src/Point.cpp.o
 
-main.i: main.cpp.i
+src/Point.i: src/Point.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Point.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Point.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Point.cpp.i
+.PHONY : src/Point.cpp.i
 
-main.s: main.cpp.s
+src/Point.s: src/Point.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Point.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Point.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Point.cpp.s
+.PHONY : src/Point.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -240,18 +240,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... aal"
-	@echo "... ConvexHull.o"
-	@echo "... ConvexHull.i"
-	@echo "... ConvexHull.s"
-	@echo "... Generator.o"
-	@echo "... Generator.i"
-	@echo "... Generator.s"
-	@echo "... Point.o"
-	@echo "... Point.i"
-	@echo "... Point.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/ConvexHull.o"
+	@echo "... src/ConvexHull.i"
+	@echo "... src/ConvexHull.s"
+	@echo "... src/Generator.o"
+	@echo "... src/Generator.i"
+	@echo "... src/Generator.s"
+	@echo "... src/Point.o"
+	@echo "... src/Point.i"
+	@echo "... src/Point.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

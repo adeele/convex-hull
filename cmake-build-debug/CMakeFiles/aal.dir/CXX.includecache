@@ -6,47 +6,47 @@
 
 #IncludeRegexTransform: 
 
-/home/adele/studies/convex-hull/ConvexHull.cpp
+/home/adele/studies/convex-hull/src/ConvexHull.cpp
 ConvexHull.h
-/home/adele/studies/convex-hull/ConvexHull.h
+/home/adele/studies/convex-hull/src/ConvexHull.h
 
-/home/adele/studies/convex-hull/ConvexHull.h
+/home/adele/studies/convex-hull/src/ConvexHull.h
 vector
 -
 Point.h
-/home/adele/studies/convex-hull/Point.h
+/home/adele/studies/convex-hull/src/Point.h
 
-/home/adele/studies/convex-hull/Generator.cpp
+/home/adele/studies/convex-hull/src/Generator.cpp
 fstream
 -
 vector
 -
 Generator.h
-/home/adele/studies/convex-hull/Generator.h
+/home/adele/studies/convex-hull/src/Generator.h
 Point.h
-/home/adele/studies/convex-hull/Point.h
+/home/adele/studies/convex-hull/src/Point.h
 
-/home/adele/studies/convex-hull/Generator.h
+/home/adele/studies/convex-hull/src/Generator.h
 Point.h
-/home/adele/studies/convex-hull/Point.h
+/home/adele/studies/convex-hull/src/Point.h
 
-/home/adele/studies/convex-hull/Point.cpp
+/home/adele/studies/convex-hull/src/Point.cpp
 Point.h
-/home/adele/studies/convex-hull/Point.h
+/home/adele/studies/convex-hull/src/Point.h
 
-/home/adele/studies/convex-hull/Point.h
+/home/adele/studies/convex-hull/src/Point.h
 iostream
 -
 
-/home/adele/studies/convex-hull/main.cpp
+/home/adele/studies/convex-hull/src/main.cpp
 iostream
 -
 vector
 -
 Point.h
-/home/adele/studies/convex-hull/Point.h
+/home/adele/studies/convex-hull/src/Point.h
 Generator.h
-/home/adele/studies/convex-hull/Generator.h
+/home/adele/studies/convex-hull/src/Generator.h
 ConvexHull.h
-/home/adele/studies/convex-hull/ConvexHull.h
+/home/adele/studies/convex-hull/src/ConvexHull.h
 

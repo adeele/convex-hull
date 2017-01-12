@@ -30,8 +30,8 @@ int main(int argc, char *argv[]) {
     points[0].print();
 
     // TODO solve ball and sphere as well
-//  g.generateDataInBall(pointsAmount);
-//  g.generateDataInSphere(pointsAmount);
+    // g.generateDataInBall(pointsAmount);
+    // g.generateDataInSphere(pointsAmount);
 
     return 0;
 }

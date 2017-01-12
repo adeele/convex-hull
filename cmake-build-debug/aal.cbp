@@ -82,31 +82,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/adele/studies/convex-hull/ConvexHull.cpp">
+		<Unit filename="/home/adele/studies/convex-hull/src/ConvexHull.cpp">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/ConvexHull.h">
+		<Unit filename="/home/adele/studies/convex-hull/src/ConvexHull.h">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/Generator.cpp">
+		<Unit filename="/home/adele/studies/convex-hull/src/Generator.cpp">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/Generator.h">
+		<Unit filename="/home/adele/studies/convex-hull/src/Generator.h">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/Plane.h">
+		<Unit filename="/home/adele/studies/convex-hull/src/Plane.h">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/Point.cpp">
+		<Unit filename="/home/adele/studies/convex-hull/src/Point.cpp">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/Point.h">
+		<Unit filename="/home/adele/studies/convex-hull/src/Point.h">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/Tetrahedron.h">
+		<Unit filename="/home/adele/studies/convex-hull/src/Tetrahedron.h">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/main.cpp">
+		<Unit filename="/home/adele/studies/convex-hull/src/main.cpp">
 			<Option target="aal"/>
 		</Unit>
 		<Unit filename="/home/adele/studies/convex-hull/CMakeLists.txt">

@@ -9,8 +9,8 @@
     </style>
   </head>
   <body>
-    <script src="three.min.js"></script>
-    <script src="ball.js"></script>
+    <script src="lib/three.min.js"></script>
+    <script src="sphere.js"></script>
     <script>
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -22,7 +22,7 @@
       var dot = new THREE.PointCloud(dotGeometry, dotMaterial);
       var angle = 0;
 
-      ball.map(function (point) {
+      sphere.map(function (point) {
         dotGeometry.vertices.push(new THREE.Vector3(point[0], point[1], point[2]));
         scene.add(dot);
       });

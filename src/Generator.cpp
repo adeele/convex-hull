@@ -5,20 +5,19 @@
 #include <fstream>
 #include <vector>
 #include "Generator.h"
-#include "Point.h"
 
 using namespace std;
 
 Generator::Generator() {}
 
-// Randomizes double number form -99.99 to 99.99
+// Randomizes double number from -99.99 to 99.99
 double randDoubleNumber() {
     return rand() % 20000 / 100.0 - 100.0;
 }
 
 vector<Point> Generator::generateDataInCube(int amount) {
     ofstream output;
-    output.open("../cube.js");
+    output.open("../static/cube.js");
     double a, b, c;
     vector<Point> points;
 
@@ -42,7 +41,7 @@ vector<Point> Generator::generateDataInCube(int amount) {
 
 void Generator::generateDataInBall(int amount) {
     ofstream output;
-    output.open("../ball.js");
+    output.open("../static/ball.js");
     double a, b, c;
 
     output << "var ball = [";
@@ -66,7 +65,7 @@ void Generator::generateDataInBall(int amount) {
 
 void Generator::generateDataInSphere(int amount) {
     ofstream output;
-    output.open("../sphere.js");
+    output.open("../static/sphere.js");
     double a, b, c;
 
     output << "var sphere = [";

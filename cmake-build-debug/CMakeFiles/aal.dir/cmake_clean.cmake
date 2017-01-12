@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/aal.dir/main.cpp.o"
-  "CMakeFiles/aal.dir/Point.cpp.o"
-  "CMakeFiles/aal.dir/Generator.cpp.o"
-  "CMakeFiles/aal.dir/ConvexHull.cpp.o"
+  "CMakeFiles/aal.dir/src/main.cpp.o"
+  "CMakeFiles/aal.dir/src/Point.cpp.o"
+  "CMakeFiles/aal.dir/src/Generator.cpp.o"
+  "CMakeFiles/aal.dir/src/ConvexHull.cpp.o"
   "aal.pdb"
   "aal"
 )
