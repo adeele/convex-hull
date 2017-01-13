@@ -3,7 +3,12 @@
 
 CMakeFiles/aal.dir/src/ConvexHull.cpp.o: ../src/ConvexHull.cpp
 CMakeFiles/aal.dir/src/ConvexHull.cpp.o: ../src/ConvexHull.h
+CMakeFiles/aal.dir/src/ConvexHull.cpp.o: ../src/Face.h
 CMakeFiles/aal.dir/src/ConvexHull.cpp.o: ../src/Point.h
+
+CMakeFiles/aal.dir/src/Face.cpp.o: ../src/Face.cpp
+CMakeFiles/aal.dir/src/Face.cpp.o: ../src/Face.h
+CMakeFiles/aal.dir/src/Face.cpp.o: ../src/Point.h
 
 CMakeFiles/aal.dir/src/Generator.cpp.o: ../src/Generator.cpp
 CMakeFiles/aal.dir/src/Generator.cpp.o: ../src/Generator.h
@@ -13,6 +18,7 @@ CMakeFiles/aal.dir/src/Point.cpp.o: ../src/Point.cpp
 CMakeFiles/aal.dir/src/Point.cpp.o: ../src/Point.h
 
 CMakeFiles/aal.dir/src/main.cpp.o: ../src/ConvexHull.h
+CMakeFiles/aal.dir/src/main.cpp.o: ../src/Face.h
 CMakeFiles/aal.dir/src/main.cpp.o: ../src/Generator.h
 CMakeFiles/aal.dir/src/main.cpp.o: ../src/Point.h
 CMakeFiles/aal.dir/src/main.cpp.o: ../src/main.cpp

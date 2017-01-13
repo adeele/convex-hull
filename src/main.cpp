@@ -24,14 +24,13 @@ int main(int argc, char *argv[]) {
     Generator g;
     vector<Point> points = g.generateDataInCube(pointsAmount);
 
-    ConvexHull ch;
-    points = ch.incrementalDevelopment(points, accuracy);
-
-    points[0].print();
+    ConvexHull ch(accuracy);
+    ch.incrementalDevelopment(points);
+    ch.exportToFile("incdev");
 
     // TODO solve ball and sphere as well
-    // g.generateDataInBall(pointsAmount);
-    // g.generateDataInSphere(pointsAmount);
+     g.generateDataInBall(pointsAmount);
+     g.generateDataInSphere(pointsAmount);
 
     return 0;
 }

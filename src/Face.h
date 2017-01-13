@@ -7,13 +7,16 @@
 
 #include "Point.h"
 
-class Plane {
+class Face {
     Point a;
     Point b;
     Point c;
 
 public:
-    Plane(Point a, Point b, Point c);
+    Face();
+    Face(Point x, Point y, Point z);
+    Point getA();
+    Point normal();
 };
 
 #endif //AAL_PLANE_H

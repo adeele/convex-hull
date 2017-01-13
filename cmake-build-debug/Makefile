@@ -150,6 +150,33 @@ src/ConvexHull.cpp.s:
 	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/ConvexHull.cpp.s
 .PHONY : src/ConvexHull.cpp.s
 
+src/Face.o: src/Face.cpp.o
+
+.PHONY : src/Face.o
+
+# target to build an object file
+src/Face.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Face.cpp.o
+.PHONY : src/Face.cpp.o
+
+src/Face.i: src/Face.cpp.i
+
+.PHONY : src/Face.i
+
+# target to preprocess a source file
+src/Face.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Face.cpp.i
+.PHONY : src/Face.cpp.i
+
+src/Face.s: src/Face.cpp.s
+
+.PHONY : src/Face.s
+
+# target to generate assembly for a file
+src/Face.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Face.cpp.s
+.PHONY : src/Face.cpp.s
+
 src/Generator.o: src/Generator.cpp.o
 
 .PHONY : src/Generator.o
@@ -243,6 +270,9 @@ help:
 	@echo "... src/ConvexHull.o"
 	@echo "... src/ConvexHull.i"
 	@echo "... src/ConvexHull.s"
+	@echo "... src/Face.o"
+	@echo "... src/Face.i"
+	@echo "... src/Face.s"
 	@echo "... src/Generator.o"
 	@echo "... src/Generator.i"
 	@echo "... src/Generator.s"

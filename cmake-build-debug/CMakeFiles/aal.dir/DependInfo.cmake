@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/adele/studies/convex-hull/src/ConvexHull.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/src/ConvexHull.cpp.o"
+  "/home/adele/studies/convex-hull/src/Face.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/src/Face.cpp.o"
   "/home/adele/studies/convex-hull/src/Generator.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/src/Generator.cpp.o"
   "/home/adele/studies/convex-hull/src/Point.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/src/Point.cpp.o"
   "/home/adele/studies/convex-hull/src/main.cpp" "/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles/aal.dir/src/main.cpp.o"

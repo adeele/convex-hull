@@ -4,6 +4,11 @@
 CMakeFiles/aal.dir/src/ConvexHull.cpp.o
  /home/adele/studies/convex-hull/src/ConvexHull.cpp
  /home/adele/studies/convex-hull/src/ConvexHull.h
+ /home/adele/studies/convex-hull/src/Face.h
+ /home/adele/studies/convex-hull/src/Point.h
+CMakeFiles/aal.dir/src/Face.cpp.o
+ /home/adele/studies/convex-hull/src/Face.cpp
+ /home/adele/studies/convex-hull/src/Face.h
  /home/adele/studies/convex-hull/src/Point.h
 CMakeFiles/aal.dir/src/Generator.cpp.o
  /home/adele/studies/convex-hull/src/Generator.cpp
@@ -14,6 +19,7 @@ CMakeFiles/aal.dir/src/Point.cpp.o
  /home/adele/studies/convex-hull/src/Point.h
 CMakeFiles/aal.dir/src/main.cpp.o
  /home/adele/studies/convex-hull/src/ConvexHull.h
+ /home/adele/studies/convex-hull/src/Face.h
  /home/adele/studies/convex-hull/src/Generator.h
  /home/adele/studies/convex-hull/src/Point.h
  /home/adele/studies/convex-hull/src/main.cpp
