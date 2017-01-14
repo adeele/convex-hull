@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/aal.dir/src/main.cpp.o"
-  "CMakeFiles/aal.dir/src/Point.cpp.o"
+  "CMakeFiles/aal.dir/src/Vector.cpp.o"
   "CMakeFiles/aal.dir/src/Generator.cpp.o"
   "CMakeFiles/aal.dir/src/ConvexHull.cpp.o"
   "CMakeFiles/aal.dir/src/Face.cpp.o"

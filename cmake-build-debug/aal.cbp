@@ -100,13 +100,13 @@
 		<Unit filename="/home/adele/studies/convex-hull/src/Generator.h">
 			<Option target="aal"/>
 		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/src/Point.cpp">
-			<Option target="aal"/>
-		</Unit>
-		<Unit filename="/home/adele/studies/convex-hull/src/Point.h">
-			<Option target="aal"/>
-		</Unit>
 		<Unit filename="/home/adele/studies/convex-hull/src/Tetrahedron.h">
+			<Option target="aal"/>
+		</Unit>
+		<Unit filename="/home/adele/studies/convex-hull/src/Vector.cpp">
+			<Option target="aal"/>
+		</Unit>
+		<Unit filename="/home/adele/studies/convex-hull/src/Vector.h">
 			<Option target="aal"/>
 		</Unit>
 		<Unit filename="/home/adele/studies/convex-hull/src/main.cpp">

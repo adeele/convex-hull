@@ -5,16 +5,16 @@
 #ifndef AAL_TETRAHEDRON_H
 #define AAL_TETRAHEDRON_H
 
-#include "Point.h"
+#include "Vector.h"
 
 class Tetrahedron {
-    Point a;
-    Point b;
-    Point c;
-    Point d;
+    Vector a;
+    Vector b;
+    Vector c;
+    Vector d;
 
 public:
-    Tetrahedron(Point a, Point b, Point c, Point d);
+    Tetrahedron(Vector a, Vector b, Vector c, Vector d);
 };
 
 #endif //AAL_TETRAHEDRON_H

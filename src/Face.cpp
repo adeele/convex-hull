@@ -2,27 +2,74 @@
 // Created by adele on 1/13/17.
 //
 
-#include "Point.h"
+#include <vector>
+#include "Vector.h"
 #include "Face.h"
 
 Face::Face() {}
 
-Face::Face(Point x, Point y, Point z) {
+Face::Face(it x, it y, it z) {
     a = x;
     b = y;
     c = z;
+    n = Face::normal();
 }
 
-// TODO refactor
-Point Face::getA() {
-    return Point(a);
+Vector Face::normal() {
+    return Face::normal(*a, *b, *c);
 }
 
-// TODO refactor
-Point Face::normal() {
-    Point dir1 = b - a;
-    Point dir2 = c - a;
-    Point n  = dir1.cross(dir2);
-    double d = n.norm();
-    return Point(n.getX() / d, n.getY() / d, n.getZ() / d);
+Vector Face::normal(const Vector &a, const Vector &b, const Vector &c) {
+    Vector v1 = b - a;
+    Vector v2 = c - a;
+    Vector n = v1.crossProduct(v2);
+    return n.normalise();
+}
+
+double Face::getSignedDistance(const Vector &p) {
+    Vector diffVec = p - *a;
+    return n.scalarProduct(diffVec) / n.getLength();
+}
+
+bool Face::isDirectedTowardsPoint(const Vector &p) {
+    Vector diffVec = p - *a;
+    double ret = diffVec.scalarProduct(n);
+    return  ret > -0.01;
+}
+
+it Face::getA()const {
+    return a;
+}
+
+it Face::getB()const {
+    return b;
+}
+
+it Face::getC()const {
+    return c;
+}
+
+ostream &operator<<(ostream &os, const Face &obj) {
+    os << "[" << *obj.getA() << ", " << *obj.getB() << ", " << *obj.getC() << "]";
+    return os;
+}
+
+void Face::setDisc(const Vector &vector1) {
+    disc = n.scalarProduct(vector1);
+}
+
+double Face::getScalarWithNormal(const Vector &vector) {
+    return n.scalarProduct(vector);
+}
+
+double Face::getDisc() {
+    return disc;
+}
+
+void Face::flipNormal() {
+    n = n.getFliped();
+}
+
+void Face::flipDisc() {
+    disc = -disc;
 }

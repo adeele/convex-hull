@@ -6,22 +6,31 @@
 #define AAL_CONVEXHULL_H
 
 #include <vector>
-#include "Point.h"
+#include <list>
+#include "Vector.h"
 #include "Face.h"
 
+typedef vector<it> vit;
+
 class ConvexHull {
-    vector<Point> chpoints;
-    vector<Face> chfaces;
+    vit chpoints;
+    list<Face> chfaces;
     double accuracy;
+    vector<Vector> pts;
 
 public:
     ConvexHull(double d);
+
+    // TODO CLEANUP remove print
     void print();
-    void incrementalDevelopment(vector<Point> points);
-    vector<Point> giftWrapping(vector<Point> points);
-    vector<Point> quickHull(vector<Point> points);
-    bool isInHull(Point &point);
     void exportToFile(const string s);
+    void incrementalDevelopment(const vector<Vector> &points);
+    bool isInHull(const Vector &point);
+    vector<Vector> giftWrapping(vector<Vector> points);
+    vector<Vector> quickHull(vector<Vector> points);
+    void removeFaceEdges(Face face, int **tab, it vector1);
+
+    void addFaceEdges(Face &face, int **tab, it vector1, it additional);
 };
 
 #endif //AAL_CONVEXHULL_H

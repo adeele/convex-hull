@@ -81,28 +81,28 @@ CMakeFiles/aal.dir/src/main.cpp.o.provides: CMakeFiles/aal.dir/src/main.cpp.o.re
 CMakeFiles/aal.dir/src/main.cpp.o.provides.build: CMakeFiles/aal.dir/src/main.cpp.o
 
 
-CMakeFiles/aal.dir/src/Point.cpp.o: CMakeFiles/aal.dir/flags.make
-CMakeFiles/aal.dir/src/Point.cpp.o: ../src/Point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/aal.dir/src/Point.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/src/Point.cpp.o -c /home/adele/studies/convex-hull/src/Point.cpp
+CMakeFiles/aal.dir/src/Vector.cpp.o: CMakeFiles/aal.dir/flags.make
+CMakeFiles/aal.dir/src/Vector.cpp.o: ../src/Vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/adele/studies/convex-hull/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/aal.dir/src/Vector.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aal.dir/src/Vector.cpp.o -c /home/adele/studies/convex-hull/src/Vector.cpp
 
-CMakeFiles/aal.dir/src/Point.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aal.dir/src/Point.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/convex-hull/src/Point.cpp > CMakeFiles/aal.dir/src/Point.cpp.i
+CMakeFiles/aal.dir/src/Vector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aal.dir/src/Vector.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/adele/studies/convex-hull/src/Vector.cpp > CMakeFiles/aal.dir/src/Vector.cpp.i
 
-CMakeFiles/aal.dir/src/Point.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aal.dir/src/Point.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/convex-hull/src/Point.cpp -o CMakeFiles/aal.dir/src/Point.cpp.s
+CMakeFiles/aal.dir/src/Vector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aal.dir/src/Vector.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/adele/studies/convex-hull/src/Vector.cpp -o CMakeFiles/aal.dir/src/Vector.cpp.s
 
-CMakeFiles/aal.dir/src/Point.cpp.o.requires:
+CMakeFiles/aal.dir/src/Vector.cpp.o.requires:
 
-.PHONY : CMakeFiles/aal.dir/src/Point.cpp.o.requires
+.PHONY : CMakeFiles/aal.dir/src/Vector.cpp.o.requires
 
-CMakeFiles/aal.dir/src/Point.cpp.o.provides: CMakeFiles/aal.dir/src/Point.cpp.o.requires
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Point.cpp.o.provides.build
-.PHONY : CMakeFiles/aal.dir/src/Point.cpp.o.provides
+CMakeFiles/aal.dir/src/Vector.cpp.o.provides: CMakeFiles/aal.dir/src/Vector.cpp.o.requires
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Vector.cpp.o.provides.build
+.PHONY : CMakeFiles/aal.dir/src/Vector.cpp.o.provides
 
-CMakeFiles/aal.dir/src/Point.cpp.o.provides.build: CMakeFiles/aal.dir/src/Point.cpp.o
+CMakeFiles/aal.dir/src/Vector.cpp.o.provides.build: CMakeFiles/aal.dir/src/Vector.cpp.o
 
 
 CMakeFiles/aal.dir/src/Generator.cpp.o: CMakeFiles/aal.dir/flags.make
@@ -180,7 +180,7 @@ CMakeFiles/aal.dir/src/Face.cpp.o.provides.build: CMakeFiles/aal.dir/src/Face.cp
 # Object files for target aal
 aal_OBJECTS = \
 "CMakeFiles/aal.dir/src/main.cpp.o" \
-"CMakeFiles/aal.dir/src/Point.cpp.o" \
+"CMakeFiles/aal.dir/src/Vector.cpp.o" \
 "CMakeFiles/aal.dir/src/Generator.cpp.o" \
 "CMakeFiles/aal.dir/src/ConvexHull.cpp.o" \
 "CMakeFiles/aal.dir/src/Face.cpp.o"
@@ -189,7 +189,7 @@ aal_OBJECTS = \
 aal_EXTERNAL_OBJECTS =
 
 aal: CMakeFiles/aal.dir/src/main.cpp.o
-aal: CMakeFiles/aal.dir/src/Point.cpp.o
+aal: CMakeFiles/aal.dir/src/Vector.cpp.o
 aal: CMakeFiles/aal.dir/src/Generator.cpp.o
 aal: CMakeFiles/aal.dir/src/ConvexHull.cpp.o
 aal: CMakeFiles/aal.dir/src/Face.cpp.o
@@ -204,7 +204,7 @@ CMakeFiles/aal.dir/build: aal
 .PHONY : CMakeFiles/aal.dir/build
 
 CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/src/main.cpp.o.requires
-CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/src/Point.cpp.o.requires
+CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/src/Vector.cpp.o.requires
 CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/src/Generator.cpp.o.requires
 CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/src/ConvexHull.cpp.o.requires
 CMakeFiles/aal.dir/requires: CMakeFiles/aal.dir/src/Face.cpp.o.requires

@@ -15,11 +15,11 @@ double randDoubleNumber() {
     return rand() % 20000 / 100.0 - 100.0;
 }
 
-vector<Point> Generator::generateDataInCube(int amount) {
+vector<Vector> Generator::generateDataInCube(int amount) {
     ofstream output;
     output.open("../static/cube.js");
     double a, b, c;
-    vector<Point> points;
+    vector<Vector> points;
 
     output << "var cube = [";
 
@@ -29,7 +29,7 @@ vector<Point> Generator::generateDataInCube(int amount) {
         c = randDoubleNumber();
         output << endl << "[" << a << ", " << b << ", " << c << "],";
 
-        Point p(a, b, c);
+        Vector p(a, b, c);
         points.push_back(p);
     }
 
@@ -51,7 +51,7 @@ void Generator::generateDataInBall(int amount) {
         b = randDoubleNumber();
         c = randDoubleNumber();
 
-        Point p(a, b, c);
+        Vector p(a, b, c);
 
         if (p.isInBall(radius_outer)) {
             output << endl << "[" << a << ", " << b << ", " << c << "],";
@@ -75,7 +75,7 @@ void Generator::generateDataInSphere(int amount) {
         b = randDoubleNumber();
         c = randDoubleNumber();
 
-        Point p(a, b, c);
+        Vector p(a, b, c);
 
         if (p.isInSphere(radius_outer, radius_inner)) {
             output << endl << "[" << a << ", " << b << ", " << c << "],";

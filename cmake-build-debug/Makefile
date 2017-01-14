@@ -204,32 +204,32 @@ src/Generator.cpp.s:
 	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Generator.cpp.s
 .PHONY : src/Generator.cpp.s
 
-src/Point.o: src/Point.cpp.o
+src/Vector.o: src/Vector.cpp.o
 
-.PHONY : src/Point.o
+.PHONY : src/Vector.o
 
 # target to build an object file
-src/Point.cpp.o:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Point.cpp.o
-.PHONY : src/Point.cpp.o
+src/Vector.cpp.o:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Vector.cpp.o
+.PHONY : src/Vector.cpp.o
 
-src/Point.i: src/Point.cpp.i
+src/Vector.i: src/Vector.cpp.i
 
-.PHONY : src/Point.i
+.PHONY : src/Vector.i
 
 # target to preprocess a source file
-src/Point.cpp.i:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Point.cpp.i
-.PHONY : src/Point.cpp.i
+src/Vector.cpp.i:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Vector.cpp.i
+.PHONY : src/Vector.cpp.i
 
-src/Point.s: src/Point.cpp.s
+src/Vector.s: src/Vector.cpp.s
 
-.PHONY : src/Point.s
+.PHONY : src/Vector.s
 
 # target to generate assembly for a file
-src/Point.cpp.s:
-	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Point.cpp.s
-.PHONY : src/Point.cpp.s
+src/Vector.cpp.s:
+	$(MAKE) -f CMakeFiles/aal.dir/build.make CMakeFiles/aal.dir/src/Vector.cpp.s
+.PHONY : src/Vector.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -276,9 +276,9 @@ help:
 	@echo "... src/Generator.o"
 	@echo "... src/Generator.i"
 	@echo "... src/Generator.s"
-	@echo "... src/Point.o"
-	@echo "... src/Point.i"
-	@echo "... src/Point.s"
+	@echo "... src/Vector.o"
+	@echo "... src/Vector.i"
+	@echo "... src/Vector.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -5,18 +5,35 @@
 #ifndef AAL_PLANE_H
 #define AAL_PLANE_H
 
-#include "Point.h"
+#include "Vector.h"
+typedef std::vector<Vector>::const_iterator it;
 
 class Face {
-    Point a;
-    Point b;
-    Point c;
+    it a;
+    it b;
+    it c;
+    Vector n;
+    double disc;
 
 public:
     Face();
-    Face(Point x, Point y, Point z);
-    Point getA();
-    Point normal();
+    Face(it x, it y, it z);
+    Vector normal();
+    bool isDirectedTowardsPoint(const Vector &vector);
+    double getSignedDistance(const Vector &p);
+    it getA()const;
+    it getB()const;
+    it getC()const;
+    static Vector normal(const Vector &a, const Vector &b, const Vector &c);
+    friend ostream& operator<< (ostream& os, const Face& obj);
+    void setDisc(const Vector &vector1);
+    double getScalarWithNormal(const Vector &vector);
+
+    double getDisc();
+
+    void flipNormal();
+
+    void flipDisc();
 };
 
 #endif //AAL_PLANE_H

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Point.h"
+#include "Vector.h"
 #include "Generator.h"
 #include "ConvexHull.h"
 
@@ -22,13 +22,23 @@ int main(int argc, char *argv[]) {
     }
 
     Generator g;
-    vector<Point> points = g.generateDataInCube(pointsAmount);
+    vector<Vector> points = g.generateDataInCube(pointsAmount);
 
     ConvexHull ch(accuracy);
+    //ConvexHull ch(0.1);
+    /*
+    ch.incrementalDevelopment({
+                                      Vector(0.0, 0.0, 0.0),
+                                      Vector(1.0, 0.0, 0.0),
+                                      Vector(0.0, 1.0, 0.0),
+                                      Vector(0.5, 0.5, 0.5),
+                                      Vector(0.5, 0.5, 1.0)
+                              });
+                              */
     ch.incrementalDevelopment(points);
     ch.exportToFile("incdev");
 
-    // TODO solve ball and sphere as well
+    // TODO LATER solve ball and sphere as well
      g.generateDataInBall(pointsAmount);
      g.generateDataInSphere(pointsAmount);
 

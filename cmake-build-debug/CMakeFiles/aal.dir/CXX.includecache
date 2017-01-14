@@ -15,20 +15,24 @@ ConvexHull.h
 /home/adele/studies/convex-hull/src/ConvexHull.h
 vector
 -
-Point.h
-/home/adele/studies/convex-hull/src/Point.h
+list
+-
+Vector.h
+/home/adele/studies/convex-hull/src/Vector.h
 Face.h
 /home/adele/studies/convex-hull/src/Face.h
 
 /home/adele/studies/convex-hull/src/Face.cpp
-Point.h
-/home/adele/studies/convex-hull/src/Point.h
+vector
+-
+Vector.h
+/home/adele/studies/convex-hull/src/Vector.h
 Face.h
 /home/adele/studies/convex-hull/src/Face.h
 
 /home/adele/studies/convex-hull/src/Face.h
-Point.h
-/home/adele/studies/convex-hull/src/Point.h
+Vector.h
+/home/adele/studies/convex-hull/src/Vector.h
 
 /home/adele/studies/convex-hull/src/Generator.cpp
 fstream
@@ -39,16 +43,20 @@ Generator.h
 /home/adele/studies/convex-hull/src/Generator.h
 
 /home/adele/studies/convex-hull/src/Generator.h
-Point.h
-/home/adele/studies/convex-hull/src/Point.h
+Vector.h
+/home/adele/studies/convex-hull/src/Vector.h
 
-/home/adele/studies/convex-hull/src/Point.cpp
+/home/adele/studies/convex-hull/src/Vector.cpp
 cmath
 -
-Point.h
-/home/adele/studies/convex-hull/src/Point.h
+vector
+-
+Vector.h
+/home/adele/studies/convex-hull/src/Vector.h
+Face.h
+/home/adele/studies/convex-hull/src/Face.h
 
-/home/adele/studies/convex-hull/src/Point.h
+/home/adele/studies/convex-hull/src/Vector.h
 iostream
 -
 
@@ -57,8 +65,8 @@ iostream
 -
 vector
 -
-Point.h
-/home/adele/studies/convex-hull/src/Point.h
+Vector.h
+/home/adele/studies/convex-hull/src/Vector.h
 Generator.h
 /home/adele/studies/convex-hull/src/Generator.h
 ConvexHull.h
