@@ -16,11 +16,11 @@ double randDoubleNumber() {
 }
 
 vector<Vector> Generator::generateDataInCube(int amount) {
-    ofstream output;
-    output.open("../static/cube.js");
     double a, b, c;
     vector<Vector> points;
+    ofstream output;
 
+    output.open("../static/cube.js");
     output << "var cube = [";
 
     while (amount--) {
@@ -39,11 +39,12 @@ vector<Vector> Generator::generateDataInCube(int amount) {
     return points;
 }
 
-void Generator::generateDataInBall(int amount) {
-    ofstream output;
-    output.open("../static/ball.js");
+vector<Vector> Generator::generateDataInBall(int amount) {
     double a, b, c;
+    vector<Vector> points;
+    ofstream output;
 
+    output.open("../static/ball.js");
     output << "var ball = [";
 
     while (amount) {
@@ -56,18 +57,23 @@ void Generator::generateDataInBall(int amount) {
         if (p.isInBall(radius_outer)) {
             output << endl << "[" << a << ", " << b << ", " << c << "],";
             amount--;
+
+            points.push_back(p);
         }
     }
 
     output << endl << "]";
     output.close();
+
+    return points;
 }
 
-void Generator::generateDataInSphere(int amount) {
-    ofstream output;
-    output.open("../static/sphere.js");
+vector<Vector> Generator::generateDataInSphere(int amount) {
     double a, b, c;
+    vector<Vector> points;
+    ofstream output;
 
+    output.open("../static/sphere.js");
     output << "var sphere = [";
 
     while (amount) {
@@ -80,9 +86,13 @@ void Generator::generateDataInSphere(int amount) {
         if (p.isInSphere(radius_outer, radius_inner)) {
             output << endl << "[" << a << ", " << b << ", " << c << "],";
             amount--;
+
+            points.push_back(p);
         }
     };
 
     output << endl << "]";
     output.close();
+
+    return points;
 }

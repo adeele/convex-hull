@@ -17,31 +17,27 @@ int main(int argc, char *argv[]) {
         int seed;
         sscanf(argv[3], "%d", &seed);
         srand(seed);
+
     } else {
         srand(time(NULL));
     }
 
     Generator g;
-    vector<Vector> points = g.generateDataInCube(pointsAmount);
 
-    ConvexHull ch(accuracy);
-    /*
-    ConvexHull ch(0.1);
-    ch.incrementalDevelopment({
-                                      Vector(0.0, 0.0, -0.5),
-                                      Vector(1.0, 0.0, 0.0),
-                                      Vector(0.0, 1.0, 0.0),
-                                      Vector(1.0, 1.0, -0.5),
-                                      Vector(0.5, 0.5, 0.5),
-                                      Vector(0.5, 0.5, 1)
-                              });
-                              */
-    ch.incrementalDevelopment(points);
-    ch.exportToFile("incdev");
+    ConvexHull cubeCH(accuracy);
+    vector<Vector> cubePoints = g.generateDataInCube(pointsAmount);
+    cubeCH.incrementalDevelopment(cubePoints);
+    cubeCH.exportToFile("incdevcube");
 
-    // TODO LATER solve ball and sphere as well
-     g.generateDataInBall(pointsAmount);
-     g.generateDataInSphere(pointsAmount);
+    ConvexHull ballCH(accuracy);
+    vector<Vector> ballPoints = g.generateDataInBall(pointsAmount);
+    ballCH.incrementalDevelopment(ballPoints);
+    ballCH.exportToFile("incdevball");
+
+    ConvexHull sphereCH(accuracy);
+    vector<Vector> spherePoints = g.generateDataInSphere(pointsAmount);
+    sphereCH.incrementalDevelopment(spherePoints);
+    sphereCH.exportToFile("incdevsphere");
 
     return 0;
 }

@@ -127,14 +127,13 @@ void ConvexHull::incrementalDevelopment(const vector<Vector> &points) {
     }
 
     chpoints = tmp;
-    cout << chpoints.size();
 }
 
 bool ConvexHull::isInHull(const Vector &point) {
     for (Face f : chfaces) {
         double signedDistance = f.getSignedDistance(point);
 
-        if (signedDistance < accuracy) {
+        if (signedDistance > accuracy) {
             return false;
         }
     }

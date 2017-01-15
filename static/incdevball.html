@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset=utf-8>
-    <title>Cube</title>
+    <title>Inc Dev Ball</title>
     <style>
       body {margin: 0; overflow: hidden}
       canvas {width: 100%; height: 100%}
@@ -10,7 +10,7 @@
   </head>
   <body>
     <script src="lib/three.min.js"></script>
-    <script src="incdev.js"></script>
+    <script src="incdevball.js"></script>
     <script>
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -21,9 +21,9 @@
       var dotMaterial = new THREE.PointCloudMaterial({size: 3, sizeAttenuation: false});
       var dot = new THREE.PointCloud(dotGeometry, dotMaterial);
       var angle = 0;
-      var cameraDistance = 250;
+      var cameraDistance = 200;
 
-      incdev.map(function (point) {
+      incdevball.map(function (point) {
         dotGeometry.vertices.push(new THREE.Vector3(point[0], point[1], point[2]));
         scene.add(dot);
       });

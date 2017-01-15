@@ -14,8 +14,8 @@ class Generator {
 public:
     Generator();
     std::vector<Vector> generateDataInCube(int amount);
-    void generateDataInBall(int amount);
-    void generateDataInSphere(int amount);
+    vector<Vector> generateDataInBall(int amount);
+    vector<Vector> generateDataInSphere(int amount);
 };
 
 #endif //AAL_GENERATOR_H
