@@ -5,6 +5,8 @@
 #include <fstream>
 #include <unordered_set>
 #include <functional>
+#include <queue>
+#include <unordered_map>
 #include "ConvexHull.h"
 
 ConvexHull::ConvexHull(double a) {
@@ -14,7 +16,7 @@ ConvexHull::ConvexHull(double a) {
 // TODO CLEANUP remove print
 void ConvexHull::print() {
     for (int i = 0; i < chpoints.size(); i++) {
-        chpoints[i]->print();
+        chpoints[i].print();
     }
 }
 
@@ -24,49 +26,43 @@ void ConvexHull::exportToFile(const string s) {
     output << "var " + s + " = [";
 
     for(auto p : chpoints) {
-        output << endl << *p << ",";
+        output << endl << p << ",";
     }
 
     output << endl << "]";
     output.close();
 }
 
-void ConvexHull::incrementalDevelopment(const vector<Vector> &points) {
-    pts = points;
 
-    int **edges = new int *[pts.size()];
-    for (int i = 0; i < pts.size(); i++) {
-        edges[i] = new int[pts.size()]();
-    }
+void ConvexHull::incrementalDevelopment(const vector<Vector> &points) {
+    unordered_map<Vector, unordered_map<Vector, int>> edgesMap(points.size());
 
     int i = 0;
-    chpoints.push_back(pts.begin() + i);
-    while (pts[++i].getDistance(*chpoints[0]) < accuracy);
-    chpoints.push_back(pts.begin() + i);
-    while (pts[++i].getDistance(*chpoints[0], *chpoints[1]) < accuracy);
-    chpoints.push_back(pts.begin() + i);
-    while (pts[++i].getDistance(*chpoints[0], *chpoints[1], *chpoints[2]) < accuracy);
-    chpoints.push_back(pts.begin() + i);
+    Vector tetrahedron[4] = {points[0]};
+    while (points[++i].getDistance(tetrahedron[0]) < accuracy);
+    tetrahedron[1] = points[i];
+    while (points[++i].getDistance(tetrahedron[0], tetrahedron[1]) < accuracy);
+    tetrahedron[2] = points[i];
+    while (points[++i].getDistance(tetrahedron[0], tetrahedron[1], tetrahedron[2]) < accuracy);
+    tetrahedron[3] = points[i];
 
     for (int i = 0; i < 4; i++) {
         for (int j = i + 1; j < 4; j++) {
             for (int k = j + 1; k < 4; k++) {
-                Face f(chpoints[i], chpoints[j], chpoints[k]);
-                addFaceEdges(f, edges, pts.begin(), chpoints[6 - i - j - k]);
+                Face f(tetrahedron[i], tetrahedron[j], tetrahedron[k]);
+                addFaceEdges(f, edgesMap, tetrahedron[6 - i - j - k]);
                 chfaces.push_back(f);
             }
         }
     }
 
-    for(i++; i < pts.size(); i++) {
-        if (!isInHull(pts[i])) {
-            chpoints.push_back(pts.begin() + i);
-
+    for(i++; i < points.size(); i++) {
+        if (!isInHull(points[i])) {
             list<Face> pom;
 
             for (auto f : chfaces) {
-                if (f.isDirectedTowardsPoint(pts[i])) {
-                    removeFaceEdges(f, edges, pts.begin());
+                if (f.isDirectedTowardsPoint(points[i])) {
+                    removeFaceEdges(f, edgesMap);
                 } else {
                     pom.push_back(f);
                 }
@@ -78,55 +74,46 @@ void ConvexHull::incrementalDevelopment(const vector<Vector> &points) {
                 auto a = f.getA();
                 auto b = f.getB();
                 auto c = f.getC();
-                auto v = pts.begin();
 
-                unsigned x = a - v;
-                unsigned y = b - v;
-                unsigned z = c - v;
-                if (edges[a - v][b - v] == 1) {
-                    Face f(a, b, pts.begin() + i);
-                    addFaceEdges(f, edges, pts.begin(), c);
+                if (edgesMap[a][b] == 1) {
+                    Face f(a, b, points[i]);
+                    addFaceEdges(f, edgesMap, c);
                     chfaces.push_back(f);
                 }
 
-                if (edges[b - v][c - v] == 1) {
-                    Face f(b, c, pts.begin() + i);
-                    addFaceEdges(f, edges, pts.begin(), a);
+                if (edgesMap[b][c] == 1) {
+                    Face f(b, c, points[i]);
+                    addFaceEdges(f, edgesMap, a);
                     chfaces.push_back(f);
                 }
 
-                if (edges[a - v][c - v] == 1) {
-                    Face f(a, c, pts.begin() + i);
-                    addFaceEdges(f, edges, pts.begin(), b);
+                if (edgesMap[a][c] == 1) {
+                    Face f(a, c, points[i]);
+                    addFaceEdges(f, edgesMap, b);
                     chfaces.push_back(f);
                 }
             }
         }
     }
 
-    unordered_set<Vector, function<size_t (const Vector &v)>> set(10, [](const Vector &v){
-        return hash<double>() (v.getLength());
-    });
+    unordered_set<Vector> set(10);
 
-    vit tmp;
     for (auto f : chfaces) {
-        if (set.count(*f.getA()) == 0) {
-            set.insert(*f.getA());
-            tmp.push_back(f.getA());
+        if (set.count(f.getA()) == 0) {
+            set.insert(f.getA());
+            chpoints.push_back(f.getA());
         }
 
-        if (set.count(*f.getB()) == 0) {
-            set.insert(*f.getB());
-            tmp.push_back(f.getB());
+        if (set.count(f.getB()) == 0) {
+            set.insert(f.getB());
+            chpoints.push_back(f.getB());
         }
 
-        if (set.count(*f.getC()) == 0) {
-            set.insert(*f.getC());
-            tmp.push_back(f.getC());
+        if (set.count(f.getC()) == 0) {
+            set.insert(f.getC());
+            chpoints.push_back(f.getC());
         }
     }
-
-    chpoints = tmp;
 }
 
 bool ConvexHull::isInHull(const Vector &point) {
@@ -141,9 +128,38 @@ bool ConvexHull::isInHull(const Vector &point) {
     return true;
 }
 
-vector<Vector> ConvexHull::giftWrapping(vector<Vector> points) {
-    // TODO LATER implement
-    return points;
+void ConvexHull::giftWrapping(vector<Vector> points) {
+    /*
+    pts = points;
+    it min1 = pts.begin();
+    it min2 = pts.begin();
+
+    for (it i = pts.begin(); i < pts.end(); i++) {
+        if (i->smallerYThan(*min1)) {
+            min1 = i;
+        }
+    }
+
+    for (it i = pts.begin(); i < pts.end(); i++) {
+        if (i->isOnTheRight(*min1, *min2)) {
+            min2 = i;
+        }
+    }
+
+    chpoints.push_back(min1);
+    chpoints.push_back(min2);
+
+    queue<pair<it, it>> q;
+    q.push(make_pair(min1, min2));
+
+    while (q.size()) {
+        for (it i = pts.begin(); i < pts.end(); i++) {
+
+        }
+    }
+    */
+
+        // dla kazdego z pozostalych punktow: czy wszytskie punkty leza po lewej stronie sciany PQC
 }
 
 vector<Vector> ConvexHull::quickHull(vector<Vector> points) {
@@ -151,19 +167,19 @@ vector<Vector> ConvexHull::quickHull(vector<Vector> points) {
     return vector<Vector>();
 }
 
-void ConvexHull::addFaceEdges(Face &face, int **tab, it v, it additonal) {
-    it a = face.getA();
-    it b = face.getB();
-    it c = face.getC();
-    tab[a - v][b - v]++;
-    tab[b - v][a - v]++;
-    tab[c - v][b - v]++;
-    tab[b - v][c - v]++;
-    tab[a - v][c - v]++;
-    tab[c - v][a - v]++;
+void ConvexHull::addFaceEdges(Face &face, unordered_map<Vector, unordered_map<Vector, int>> &tab, Vector &additional) {
+    Vector a = face.getA();
+    Vector b = face.getB();
+    Vector c = face.getC();
+    tab[a][b]++;
+    tab[b][a]++;
+    tab[c][b]++;
+    tab[b][c]++;
+    tab[a][c]++;
+    tab[c][a]++;
 
-    face.setDisc(*a);
-    double d = face.getScalarWithNormal(*additonal);
+    face.setDisc(a);
+    double d = face.getScalarWithNormal(additional);
 
     if (d > face.getDisc()) {
         face.flipNormal();
@@ -171,14 +187,14 @@ void ConvexHull::addFaceEdges(Face &face, int **tab, it v, it additonal) {
     }
 }
 
-void ConvexHull::removeFaceEdges(Face face, int **tab, it v) {
-    it a = face.getA();
-    it b = face.getB();
-    it c = face.getC();
-    tab[a - v][b - v]--;
-    tab[b - v][a - v]--;
-    tab[c - v][b - v]--;
-    tab[b - v][c - v]--;
-    tab[a - v][c - v]--;
-    tab[c - v][a - v]--;
+void ConvexHull::removeFaceEdges(const Face &face, unordered_map<Vector, unordered_map<Vector, int>> &tab) {
+    Vector a = face.getA();
+    Vector b = face.getB();
+    Vector c = face.getC();
+    tab[a][b]--;
+    tab[b][a]--;
+    tab[c][b]--;
+    tab[b][c]--;
+    tab[a][c]--;
+    tab[c][a]--;
 }

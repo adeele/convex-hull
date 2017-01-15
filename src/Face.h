@@ -6,24 +6,23 @@
 #define AAL_PLANE_H
 
 #include "Vector.h"
-typedef std::vector<Vector>::const_iterator it;
 
 class Face {
-    it a;
-    it b;
-    it c;
+    Vector a;
+    Vector b;
+    Vector c;
     Vector n;
     double disc;
 
 public:
     Face();
-    Face(it x, it y, it z);
+    Face(const Vector &x, const Vector &y, const Vector &z);
     Vector normal();
     bool isDirectedTowardsPoint(const Vector &vector);
     double getSignedDistance(const Vector &p);
-    it getA()const;
-    it getB()const;
-    it getC()const;
+    Vector getA()const;
+    Vector getB()const;
+    Vector getC()const;
     static Vector normal(const Vector &a, const Vector &b, const Vector &c);
     friend ostream& operator<< (ostream& os, const Face& obj);
     void setDisc(const Vector &vector1);

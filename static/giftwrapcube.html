@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>Gift Wrap Cube</title>
+    <style>
+      body {margin: 0; overflow: hidden}
+      canvas {width: 100%; height: 100%}
+    </style>
+  </head>
+  <body>
+    <script src="lib/three.min.js"></script>
+    <script src="giftwrapcube.js"></script>
+    <script>
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+      var dotGeometry = new THREE.Geometry();
+      var dotMaterial = new THREE.PointCloudMaterial({size: 3, sizeAttenuation: false});
+      var dot = new THREE.PointCloud(dotGeometry, dotMaterial);
+      var angle = 0;
+      var cameraDistance = 250;
+
+      giftwrapcube.map(function (point) {
+        dotGeometry.vertices.push(new THREE.Vector3(point[0], point[1], point[2]));
+        scene.add(dot);
+      });
+
+      function render() {
+          requestAnimationFrame(render);
+          renderer.render(scene, camera);
+          camera.lookAt(new THREE.Vector3(0,0,0));
+          camera.position.x = cameraDistance * Math.cos(angle);
+          camera.position.z = cameraDistance * Math.sin(angle);
+          angle += 0.01;
+      }
+
+      render();
+    </script>
+  </body>
+</html>

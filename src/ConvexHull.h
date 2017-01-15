@@ -6,17 +6,15 @@
 #define AAL_CONVEXHULL_H
 
 #include <vector>
+#include <unordered_map>
 #include <list>
 #include "Vector.h"
 #include "Face.h"
 
-typedef vector<it> vit;
-
 class ConvexHull {
-    vit chpoints;
+    vector<Vector> chpoints;
     list<Face> chfaces;
     double accuracy;
-    vector<Vector> pts;
 
 public:
     ConvexHull(double d);
@@ -26,11 +24,10 @@ public:
     void exportToFile(const string s);
     void incrementalDevelopment(const vector<Vector> &points);
     bool isInHull(const Vector &point);
-    vector<Vector> giftWrapping(vector<Vector> points);
+    void giftWrapping(vector<Vector> points);
     vector<Vector> quickHull(vector<Vector> points);
-    void removeFaceEdges(Face face, int **tab, it vector1);
-
-    void addFaceEdges(Face &face, int **tab, it vector1, it additional);
+    void removeFaceEdges(const Face &face, unordered_map<Vector, unordered_map<Vector, int>> &tab);
+    void addFaceEdges(Face &face, unordered_map<Vector, unordered_map<Vector, int>> &tab, Vector &additional);
 };
 
 #endif //AAL_CONVEXHULL_H

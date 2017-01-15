@@ -39,5 +39,12 @@ int main(int argc, char *argv[]) {
     sphereCH.incrementalDevelopment(spherePoints);
     sphereCH.exportToFile("incdevsphere");
 
-    return 0;
+/*
+ConvexHull cubeCH(accuracy);
+vector<Vector> cubePoints = g.generateDataInCube(pointsAmount);
+cubeCH.giftWrapping(cubePoints);
+cubeCH.exportToFile("giftwrapcube");
+    */
+
+return 0;
 }

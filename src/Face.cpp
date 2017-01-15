@@ -8,15 +8,15 @@
 
 Face::Face() {}
 
-Face::Face(it x, it y, it z) {
+Face::Face(const Vector &x, const Vector &y, const Vector &z) {
     a = x;
     b = y;
     c = z;
-    n = Face::normal();
+    n = normal();
 }
 
 Vector Face::normal() {
-    return Face::normal(*a, *b, *c);
+    return normal(a, b, c);
 }
 
 Vector Face::normal(const Vector &a, const Vector &b, const Vector &c) {
@@ -27,30 +27,30 @@ Vector Face::normal(const Vector &a, const Vector &b, const Vector &c) {
 }
 
 double Face::getSignedDistance(const Vector &p) {
-    Vector diffVec = p - *a;
+    Vector diffVec = p - a;
     return n.scalarProduct(diffVec) / n.getLength();
 }
 
 bool Face::isDirectedTowardsPoint(const Vector &p) {
-    Vector diffVec = p - *a;
+    Vector diffVec = p - a;
     double ret = diffVec.scalarProduct(n);
     return  ret > -0.01;
 }
 
-it Face::getA()const {
+Vector Face::getA()const {
     return a;
 }
 
-it Face::getB()const {
+Vector Face::getB()const {
     return b;
 }
 
-it Face::getC()const {
+Vector Face::getC()const {
     return c;
 }
 
 ostream &operator<<(ostream &os, const Face &obj) {
-    os << "[" << *obj.getA() << ", " << *obj.getB() << ", " << *obj.getC() << "]";
+    os << "[" << obj.getA() << ", " << obj.getB() << ", " << obj.getC() << "]";
     return os;
 }
 

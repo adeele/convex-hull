@@ -83,3 +83,11 @@ double Vector::getDistance(const Vector &a, const Vector &b, const Vector &c)con
 Vector Vector::getFliped() {
     return Vector(-x, -y, -z);
 }
+
+bool Vector::smallerYThan(const Vector &toCompare) const {
+    return y < toCompare.y;
+}
+
+bool Vector::isOnTheRight(const Vector a, const Vector b) const{
+    return (b.x - a.x) * (y - a.y) - (b.y - a.y) * (x - a.x) < 0;
+}

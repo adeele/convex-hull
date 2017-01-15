@@ -33,8 +33,20 @@ public:
     double getDistance(const Vector &a, const Vector &b, const Vector &c)const;
     Vector crossProduct(Vector &p);
     double scalarProduct(const Vector &p);
-
     Vector getFliped();
+    bool smallerYThan(const Vector &toCompare) const;
+    bool isOnTheRight(const Vector a, const Vector b) const;
+};
+
+
+namespace std {
+    template <>
+    class hash<Vector>{
+    public :
+        size_t operator()(const Vector &v) const{
+            return hash<double>() (v.getLength());
+        }
+    };
 };
 
 #endif //AAL_POINT_H
