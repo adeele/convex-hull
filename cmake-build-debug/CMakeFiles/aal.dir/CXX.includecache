@@ -9,6 +9,10 @@
 /home/adele/studies/convex-hull/src/ConvexHull.cpp
 fstream
 -
+unordered_set
+-
+functional
+-
 ConvexHull.h
 /home/adele/studies/convex-hull/src/ConvexHull.h
 

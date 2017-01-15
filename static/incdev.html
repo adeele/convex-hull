@@ -21,6 +21,7 @@
       var dotMaterial = new THREE.PointCloudMaterial({size: 3, sizeAttenuation: false});
       var dot = new THREE.PointCloud(dotGeometry, dotMaterial);
       var angle = 0;
+      var cameraDistance = 250;
 
       incdev.map(function (point) {
         dotGeometry.vertices.push(new THREE.Vector3(point[0], point[1], point[2]));
@@ -31,8 +32,8 @@
           requestAnimationFrame(render);
           renderer.render(scene, camera);
           camera.lookAt(new THREE.Vector3(0,0,0));
-          camera.position.x = 250 * Math.cos(angle);
-          camera.position.z = 250 * Math.sin(angle);
+          camera.position.x = cameraDistance * Math.cos(angle);
+          camera.position.z = cameraDistance * Math.sin(angle);
           angle += 0.01;
       }
 

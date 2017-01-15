@@ -23,7 +23,7 @@ Vector Vector::operator- (const Vector &p)const {
     return Vector(x - p.x, y - p.y, z - p.z);
 }
 
-bool Vector::operator== (Vector &p) {
+bool Vector::operator== (const Vector &p) const{
     return x == p.x && y == p.y && z == p.z;
 }
 

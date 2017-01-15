@@ -19,7 +19,7 @@ public:
     Vector(double a, double b, double c);
 
     Vector operator- (const Vector &p)const;
-    bool operator== (Vector &p);
+    bool operator== (const Vector &p) const;
     friend ostream& operator<< (ostream& os, const Vector& obj);
 
     // TODO CLEANUP remove print

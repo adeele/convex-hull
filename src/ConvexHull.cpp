@@ -3,6 +3,8 @@
 //
 
 #include <fstream>
+#include <unordered_set>
+#include <functional>
 #include "ConvexHull.h"
 
 ConvexHull::ConvexHull(double a) {
@@ -58,57 +60,74 @@ void ConvexHull::incrementalDevelopment(const vector<Vector> &points) {
 
     for(i++; i < pts.size(); i++) {
         if (!isInHull(pts[i])) {
-            vector<list<Face>::iterator> facesToDelete;
             chpoints.push_back(pts.begin() + i);
 
-            for (list<Face>::iterator f = chfaces.begin(); f != chfaces.end(); f++) {
-                if (f->isDirectedTowardsPoint(pts[i])) {
-                    facesToDelete.push_back(f);
-                    removeFaceEdges(*f, edges, pts.begin());
+            list<Face> pom;
+
+            for (auto f : chfaces) {
+                if (f.isDirectedTowardsPoint(pts[i])) {
+                    removeFaceEdges(f, edges, pts.begin());
+                } else {
+                    pom.push_back(f);
                 }
             }
 
-            for (list<Face>::iterator &f : facesToDelete) {
-                chfaces.erase(f);
+            chfaces = pom;
 
-                auto a = f->getA();
-                auto b = f->getB();
-                auto c = f->getC();
+            for (auto &f : chfaces) {
+                auto a = f.getA();
+                auto b = f.getB();
+                auto c = f.getC();
                 auto v = pts.begin();
 
+                unsigned x = a - v;
+                unsigned y = b - v;
+                unsigned z = c - v;
                 if (edges[a - v][b - v] == 1) {
                     Face f(a, b, pts.begin() + i);
-                    chfaces.push_back(f);
                     addFaceEdges(f, edges, pts.begin(), c);
-                    edges[c - v][c - v] = -1;
+                    chfaces.push_back(f);
                 }
 
                 if (edges[b - v][c - v] == 1) {
                     Face f(b, c, pts.begin() + i);
-                    chfaces.push_back(f);
                     addFaceEdges(f, edges, pts.begin(), a);
-                    edges[a - v][a - v] = -1;
+                    chfaces.push_back(f);
                 }
 
                 if (edges[a - v][c - v] == 1) {
                     Face f(a, c, pts.begin() + i);
-                    chfaces.push_back(f);
                     addFaceEdges(f, edges, pts.begin(), b);
-                    edges[b - v][b - v] = -1;
+                    chfaces.push_back(f);
                 }
             }
         }
     }
 
-    vit res;
+    unordered_set<Vector, function<size_t (const Vector &v)>> set(10, [](const Vector &v){
+        return hash<double>() (v.getLength());
+    });
 
-    for (auto point : chpoints) {
-        if (edges[point - pts.begin()][point - pts.begin()] != -1) {
-            res.push_back(point);
+    vit tmp;
+    for (auto f : chfaces) {
+        if (set.count(*f.getA()) == 0) {
+            set.insert(*f.getA());
+            tmp.push_back(f.getA());
+        }
+
+        if (set.count(*f.getB()) == 0) {
+            set.insert(*f.getB());
+            tmp.push_back(f.getB());
+        }
+
+        if (set.count(*f.getC()) == 0) {
+            set.insert(*f.getC());
+            tmp.push_back(f.getC());
         }
     }
 
-    chpoints = res;
+    chpoints = tmp;
+    cout << chpoints.size();
 }
 
 bool ConvexHull::isInHull(const Vector &point) {

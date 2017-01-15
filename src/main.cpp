@@ -25,14 +25,15 @@ int main(int argc, char *argv[]) {
     vector<Vector> points = g.generateDataInCube(pointsAmount);
 
     ConvexHull ch(accuracy);
-    //ConvexHull ch(0.1);
     /*
+    ConvexHull ch(0.1);
     ch.incrementalDevelopment({
-                                      Vector(0.0, 0.0, 0.0),
+                                      Vector(0.0, 0.0, -0.5),
                                       Vector(1.0, 0.0, 0.0),
                                       Vector(0.0, 1.0, 0.0),
+                                      Vector(1.0, 1.0, -0.5),
                                       Vector(0.5, 0.5, 0.5),
-                                      Vector(0.5, 0.5, 1.0)
+                                      Vector(0.5, 0.5, 1)
                               });
                               */
     ch.incrementalDevelopment(points);
