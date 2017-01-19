@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
 
     Generator g;
 
+    /*
     ConvexHull cubeCH(accuracy);
     vector<Vector> cubePoints = g.generateDataInCube(pointsAmount);
     cubeCH.incrementalDevelopment(cubePoints);
@@ -38,13 +39,22 @@ int main(int argc, char *argv[]) {
     vector<Vector> spherePoints = g.generateDataInSphere(pointsAmount);
     sphereCH.incrementalDevelopment(spherePoints);
     sphereCH.exportToFile("incdevsphere");
+     */
 
-/*
-ConvexHull cubeCH(accuracy);
-vector<Vector> cubePoints = g.generateDataInCube(pointsAmount);
-cubeCH.giftWrapping(cubePoints);
-cubeCH.exportToFile("giftwrapcube");
-    */
+    ConvexHull cubeCH(accuracy);
+    vector<Vector> cubePoints = g.generateDataInCube(pointsAmount);
+    cubeCH.giftWrapping(cubePoints);
+    cubeCH.exportToFile("giftwrapcube");
 
-return 0;
+    ConvexHull ballCH(accuracy);
+    vector<Vector> ballPoints = g.generateDataInBall(pointsAmount);
+    ballCH.giftWrapping(ballPoints);
+    ballCH.exportToFile("giftwrapball");
+
+    ConvexHull sphereCH(accuracy);
+    vector<Vector> spherePoints = g.generateDataInSphere(pointsAmount);
+    sphereCH.giftWrapping(spherePoints);
+    sphereCH.exportToFile("giftwrapsphere");
+
+    return 0;
 }

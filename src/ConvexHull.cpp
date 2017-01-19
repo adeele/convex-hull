@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include <unordered_set>
-#include <functional>
+#include <algorithm>
 #include <queue>
 #include <unordered_map>
 #include "ConvexHull.h"
@@ -56,7 +56,7 @@ void ConvexHull::incrementalDevelopment(const vector<Vector> &points) {
         }
     }
 
-    for(i++; i < points.size(); i++) {
+    for (i++; i < points.size(); i++) {
         if (!isInHull(points[i])) {
             list<Face> pom;
 
@@ -129,37 +129,52 @@ bool ConvexHull::isInHull(const Vector &point) {
 }
 
 void ConvexHull::giftWrapping(vector<Vector> points) {
-    /*
-    pts = points;
-    it min1 = pts.begin();
-    it min2 = pts.begin();
+    int i;
+    Vector min1 = points[0];
 
-    for (it i = pts.begin(); i < pts.end(); i++) {
-        if (i->smallerYThan(*min1)) {
-            min1 = i;
-        }
-    }
-
-    for (it i = pts.begin(); i < pts.end(); i++) {
-        if (i->isOnTheRight(*min1, *min2)) {
-            min2 = i;
+    for (i = 1; i < points.size(); i++) {
+        if (points[i].smallerYThan(min1)) {
+            min1 = points[i];
         }
     }
 
     chpoints.push_back(min1);
-    chpoints.push_back(min2);
 
-    queue<pair<it, it>> q;
-    q.push(make_pair(min1, min2));
+    Vector min2 = points[0];
 
-    while (q.size()) {
-        for (it i = pts.begin(); i < pts.end(); i++) {
-
+    for (i = 1; i < points.size(); i++) {
+        if (points[i].isOnTheRight(min1, min2)) {
+            min2 = points[i];
         }
     }
-    */
 
-        // dla kazdego z pozostalych punktow: czy wszytskie punkty leza po lewej stronie sciany PQC
+    chpoints.push_back(min2);
+
+    queue<pair<Vector, Vector>> q;
+    q.push(make_pair(min1, min2));
+
+    while (q.size() > 0) {
+        Vector c = points[0];
+
+        for (i = 1; i < points.size(); i++) {
+            Face f(q.front().first, q.front().second, c);
+
+            double x = f.getSignedDistance(points[i]);
+            if (f.getSignedDistance(points[i]) > accuracy) {
+                c = points[i];
+            }
+        }
+
+        vector<Vector>::iterator it = find(chpoints.begin(), chpoints.end(), c);
+
+        if (it == chpoints.end()) {
+            chpoints.push_back(c);
+            q.push(make_pair(q.front().first, c));
+            q.push(make_pair(c, q.front().second));
+        }
+
+        q.pop();
+    }
 }
 
 vector<Vector> ConvexHull::quickHull(vector<Vector> points) {

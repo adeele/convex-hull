@@ -24,6 +24,7 @@ Vector Vector::operator- (const Vector &p)const {
 }
 
 bool Vector::operator== (const Vector &p) const{
+    //return (fabs(x - p.x) + fabs(y - p.y) + fabs(z - p.z)) < 0.000001;
     return x == p.x && y == p.y && z == p.z;
 }
 
