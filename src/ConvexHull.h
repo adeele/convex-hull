@@ -25,9 +25,10 @@ public:
     void incrementalDevelopment(const vector<Vector> &points);
     bool isInHull(const Vector &point);
     void giftWrapping(vector<Vector> points);
-    vector<Vector> quickHull(vector<Vector> points);
+    void quickHull(vector<Vector> points);
     void removeFaceEdges(const Face &face, unordered_map<Vector, unordered_map<Vector, int>> &tab);
     void addFaceEdges(Face &face, unordered_map<Vector, unordered_map<Vector, int>> &tab, Vector &additional);
+    void quickHullRecursion(Face &face, vector<Vector> points);
 };
 
 #endif //AAL_CONVEXHULL_H

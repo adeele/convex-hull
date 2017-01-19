@@ -177,9 +177,52 @@ void ConvexHull::giftWrapping(vector<Vector> points) {
     }
 }
 
-vector<Vector> ConvexHull::quickHull(vector<Vector> points) {
-    // TODO LATER implement
-    return vector<Vector>();
+void ConvexHull::quickHull(vector<Vector> points) {
+    int i;
+    Vector min1 = points[0];
+
+    for (i = 1; i < points.size(); i++) {
+        if (points[i].smallerYThan(min1)) {
+            min1 = points[i];
+        }
+    }
+
+    chpoints.push_back(min1);
+    Vector min2 = points[0];
+
+    for (i = 1; i < points.size(); i++) {
+        if (points[i].getDistance(min1) > min2.getDistance(min1) + accuracy) {
+            min2 = points[i];
+        }
+    }
+
+    chpoints.push_back(min2);
+    Vector min3 = points[0];
+
+    for (i = 1; i < points.size(); i++) {
+        if (points[i].getDistance(min1, min2) > min3.getDistance(min1, min2) + accuracy) {
+            min3 = points[i];
+        }
+    }
+
+    chpoints.push_back(min3);
+
+    Face f1(min1, min2, min3);
+    vector<Vector> pts1, pts2;
+
+    for (Vector v : points) {
+        if (f1.getSignedDistance(v) < (-1)*accuracy) {
+            pts1.push_back(v);
+        } else if (f1.getSignedDistance(v) > accuracy) {
+            pts2.push_back(v);
+        }
+    }
+
+    int x = pts1.size();
+    int y = pts2.size();
+    quickHullRecursion(f1, pts1);
+    f1.flipNormal();
+    quickHullRecursion(f1, pts2);
 }
 
 void ConvexHull::addFaceEdges(Face &face, unordered_map<Vector, unordered_map<Vector, int>> &tab, Vector &additional) {
@@ -212,4 +255,73 @@ void ConvexHull::removeFaceEdges(const Face &face, unordered_map<Vector, unorder
     tab[b][c]--;
     tab[a][c]--;
     tab[c][a]--;
+}
+
+void ConvexHull::quickHullRecursion(Face &face, vector<Vector> points) {
+    if (points.size() == 0) {
+        return;
+    }
+
+    Vector v = points[0];
+
+    for (int i = 1; i < points.size(); i++) {
+        double x = face.getSignedDistance(points[i]);
+        double y = face.getSignedDistance(v) + accuracy;
+        if (face.getSignedDistance(points[i]) > face.getSignedDistance(v) + accuracy) {
+            v = points[i];
+        }
+    }
+
+    chpoints.push_back(v);
+
+    vector<Vector> pts1, pts2, pts3;
+
+    Face f1(face.getA(), face.getB(), v);
+    f1.setDisc(face.getA());
+    double d = f1.getScalarWithNormal(face.getC());
+
+    if (d > f1.getDisc()) {
+        f1.flipNormal();
+        f1.flipDisc();
+    }
+
+    Face f2(face.getA(), face.getC(), v);
+    f2.setDisc(face.getA());
+    d = f2.getScalarWithNormal(face.getB());
+
+    if (d > f2.getDisc()) {
+        f2.flipNormal();
+        f2.flipDisc();
+    }
+
+    Face f3(face.getC(), face.getB(), v);
+    f3.setDisc(face.getC());
+    d = f3.getScalarWithNormal(face.getA());
+
+    if (d > f3.getDisc()) {
+        f3.flipNormal();
+        f3.flipDisc();
+    }
+
+    for (Vector v : points) {
+        if (f1.getSignedDistance(v) > accuracy) {
+            pts1.push_back(v);
+        }
+
+        if (f2.getSignedDistance(v) > accuracy) {
+            pts2.push_back(v);
+        }
+
+        if (f3.getSignedDistance(v) > accuracy) {
+            pts3.push_back(v);
+        }
+    }
+
+    chfaces.push_back(f1);
+    chfaces.push_back(f2);
+    chfaces.push_back(f3);
+
+    quickHullRecursion(f1, pts1);
+    quickHullRecursion(f2, pts2);
+    quickHullRecursion(f3, pts3);
 }
